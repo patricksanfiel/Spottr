@@ -1,0 +1,12 @@
+<h1>Login</h1>
+
+<%= form_tag '/login' do %>
+Username:<br />
+<%= text_field_tag :username %><br />
+Password:<br />
+<%= password_field_tag :password %><br />
+<%= submit_tag "Submit" %>
+<% end %>
+
+<%= link_to "Sign Up", users_new_path %>
+<%= link_to "Back", root_path %>

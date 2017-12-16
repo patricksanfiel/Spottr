@@ -1,0 +1,35 @@
+<h1>Sign Up!</h1>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  <div class="form">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="form">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="form">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="form">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <%= f.submit "Sign Up" %>
+
+<% end %>
+
+<%= link_to "Back", root_path %>
+<%= link_to "Login", sessions_new_path %>

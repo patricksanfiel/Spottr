@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spottr</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 80%;
+        width: 80%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <button id="button-track-me">Track Me</button>
+    <button id="button-stop-tracking">Stop Tracking Me</button>
+    <button id="button-mark-spot">Mark Spot</button>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf_hNLTtGr7CruubLRsAL3ygms8LqKL-I&callback=initMap"
+    async defer></script>
+  </body>
+</html>

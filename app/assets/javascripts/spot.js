@@ -60,7 +60,8 @@ window.onload = function() {
         data: {
           spot: {
             latitude: latitude,
-            longitude: longitude
+            longitude: longitude,
+            is_open: true
         }
       }
     })

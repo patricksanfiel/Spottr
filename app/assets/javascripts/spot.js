@@ -62,10 +62,11 @@ window.onload = function() {
             latitude: latitude,
             longitude: longitude
         }
-      })
+      }
+    })
       .done(function(data){
         if (data.is_successs) {
-          console.log("SPOT CREATED")
+          console.log("SPOT CREATED");
         }
       })
       document.getElementById('button-mark-spot').disabled = true;

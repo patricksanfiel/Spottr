@@ -65,11 +65,13 @@ window.onload = function() {
         }
       }
     })
+
       .done(function(data){
         if (data.is_successs) {
           console.log("SPOT CREATED");
         }
-      })
+      });
+
       document.getElementById('button-mark-spot').disabled = true;
     }
   });

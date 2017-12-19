@@ -70,6 +70,7 @@ window.onload = function() {
 
   trackMe=document.getElementById('button-mark-spot').addEventListener('click',
   function() {
+    var infoWindow;
     if (trackMe === true){
       myLatLng = {lat: latitude, lng: longitude};
       marker = new google.maps.Marker({
@@ -77,7 +78,12 @@ window.onload = function() {
         map: map,
         icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
       });
-
+      infowindow = new google.maps.InfoWindow({
+          content: document.getElementById('description')
+        });
+      google.maps.event.addListener(marker, 'click', function() {
+              infowindow.open(map, marker);
+            });
       markers.push(marker);
       setTimeout(function(){
         // marker.setMap(null);

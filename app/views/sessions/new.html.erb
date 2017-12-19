@@ -1,12 +1,24 @@
-<h1>Login</h1>
-
+<head>
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<%= stylesheet_link_tag "users" %>
+<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+</head>
+<body class='sign_up_page'>
+  <center>
+<div class="card" style="width: 25rem;">
+<div class="card-body">
+  <h4 class="card-title">Login</h4>
 <%= form_tag '/login' do %>
 Username:<br />
 <%= text_field_tag :username %><br />
 Password:<br />
 <%= password_field_tag :password %><br />
-<%= submit_tag "Submit" %>
-<% end %>
-
+<div class="login_button">
+<%= submit_tag "Submit", class:'btn btn-primary btn-lg' %>
+</div>
 <%= link_to "Sign Up", users_new_path %>
 <%= link_to "Back", root_path %>
+</center>
+<% end %>
+</body>

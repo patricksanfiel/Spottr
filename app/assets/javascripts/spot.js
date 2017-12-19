@@ -1,4 +1,4 @@
-var latitude, longitude, map, identifier, trackMe, myLatLng, marker, markers, i;
+var latitude, longitude, map, identifier, trackMe, myLatLng, marker, markers, i, mkrs;
 
 markers = []
 function initMap() {
@@ -13,16 +13,24 @@ function initMap() {
       var mkrs = JSON.parse(document.querySelector("#all_spots").value);
       for (i = 0; i < mkrs.length; i++){
         myLatLng = { lat: mkrs[i][0], lng: mkrs[i][1] };
+        var isOpen = mkrs[i][2]
+        if (isOpen===true){
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        });
+      }
+      else {
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map
         });
       }
-    });
-  };
+    }
+  });
 }
-
-
+}
 // function setMapOnAll(map) {
 //   for (var i = 0; i < markers.length; i++) {
 //     markers[i].setMap(map);
@@ -47,8 +55,7 @@ window.onload = function() {
        document.getElementById('button-stop-tracking').disabled = false;
        document.getElementById('button-mark-spot').disabled = false;
 
-   }
- );
+   });
 
   document.getElementById('button-stop-tracking').addEventListener('click',
   function() {
@@ -95,8 +102,8 @@ window.onload = function() {
       });
 
       document.getElementById('button-mark-spot').disabled = true;
-    }
-  });
+  }
+});
 }
 //
 // function addMarker(lat, lng){

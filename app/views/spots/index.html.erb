@@ -20,7 +20,7 @@
     </style>
   </head>
   <body>
-    <%= hidden_field_tag :all_spots, Spot.all.map{|s| [s.latitude, s.longitude].compact}.reject(&:blank?).to_json %>
+    <%= hidden_field_tag :all_spots, Spot.all.map{|s| [s.latitude, s.longitude, s.is_open].compact}.reject(&:blank?).to_json %>
     <div id="map"></div>
     <button id="button-track-me">Track Me</button>
     <button id="button-stop-tracking">Stop Tracking Me</button>

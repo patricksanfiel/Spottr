@@ -1,4 +1,6 @@
-var latitude, longitude, map, identifier, trackMe, myLatLng, marker;
+var latitude, longitude, map, identifier, trackMe, myLatLng, marker, markers, i;
+
+markers = []
 function initMap() {
   if (trackMe===true){
     identifier=window.navigator.geolocation.watchPosition(function(position) {
@@ -8,9 +10,25 @@ function initMap() {
           center: {lat: latitude, lng: longitude},
           zoom: 15
       });
+      var mkrs = JSON.parse(document.querySelector("#all_spots").value);
+      for (i = 0; i < mkrs.length; i++){
+        myLatLng = { lat: mkrs[i][0], lng: mkrs[i][1] };
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map
+        });
+      }
     });
   };
 }
+
+
+// function setMapOnAll(map) {
+//   for (var i = 0; i < markers.length; i++) {
+//     markers[i].setMap(map);
+//   }
+// }
+
 
 function stopTracking(){
   window.navigator.geolocation.clearWatch(identifier);
@@ -24,9 +42,11 @@ window.onload = function() {
      initMap();
        window.navigator.geolocation.getCurrentPosition(function(position){
          console.log(position);
+         // setMapOnAll(map);
        })
        document.getElementById('button-stop-tracking').disabled = false;
        document.getElementById('button-mark-spot').disabled = false;
+
    }
  );
 
@@ -48,10 +68,12 @@ window.onload = function() {
         map: map,
         title: 'Hello World!'
       });
+
+      markers.push(marker);
       setTimeout(function(){
-        marker.setMap(null);
+        // marker.setMap(null);
         document.getElementById('button-mark-spot').disabled = false;
-      },300000)
+      },6000)
 
       $.ajax({
         type: "POST",
@@ -60,16 +82,26 @@ window.onload = function() {
         data: {
           spot: {
             latitude: latitude,
-            longitude: longitude
+            longitude: longitude,
+            is_open: true
         }
       }
     })
+
       .done(function(data){
         if (data.is_successs) {
           console.log("SPOT CREATED");
         }
-      })
+      });
+
       document.getElementById('button-mark-spot').disabled = true;
     }
   });
 }
+//
+// function addMarker(lat, lng){
+//   marker = new.google.maps.Marker({
+//     position: myLatLng,
+//     map: map
+//   })
+// }

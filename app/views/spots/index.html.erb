@@ -20,7 +20,7 @@
     </style>
   </head>
   <body>
-    <%= hidden_field_tag :all_spots, @spots.map{|s| [s.latitude, s.longitude, s.is_open].compact}.reject(&:blank?).to_json %>
+    <!-- <%= hidden_field_tag :all_spots, @spots.map{|s| [s.latitude, s.longitude, s.is_open].compact}.reject(&:blank?).to_json %> -->
     <script>
       // console.log(gon.spots);
     </script>

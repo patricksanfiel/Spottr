@@ -12,10 +12,10 @@ function initMap() {
           center: {lat: latitude, lng: longitude},
           zoom: 15
       });
-      mkrs = JSON.parse(document.querySelector("#all_spots").value);
+      mkrs = gon.spots
       for (i = 0; i < mkrs.length; i++){
-        myLatLng = { lat: mkrs[i][0], lng: mkrs[i][1] };
-        isOpen = mkrs[i][2]
+        myLatLng = { lat: mkrs[i].latitude, lng: mkrs[i].longitude };
+        isOpen = mkrs[i].is_open
         if (isOpen===true){
         marker = new google.maps.Marker({
           position: myLatLng,

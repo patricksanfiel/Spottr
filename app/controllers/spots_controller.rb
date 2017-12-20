@@ -6,14 +6,18 @@ class SpotsController < ApplicationController
   end
 
   def index
-
+    @spots = Spot.all
+    gon.spots = @spots
   end
 
   def create
     @spot = current_user.spots.build(spot_params)
+    # debugger
     # @spot.is_open = true
-    respond_to do |format|
-      format.json {render json: {is_successs: @spot.save! }}
+    if @spot.save
+      render json: @spot
+    else
+      render json: @spot.errors
     end
   end
 

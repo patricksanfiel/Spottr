@@ -20,12 +20,25 @@
     </style>
   </head>
   <body>
-    <%= hidden_field_tag :all_spots, Spot.all.map{|s| [s.latitude, s.longitude, s.is_open].compact}.reject(&:blank?).to_json %>
+    <%= hidden_field_tag :all_spots, @spots.map{|s| [s.latitude, s.longitude, s.is_open].compact}.reject(&:blank?).to_json %>
+    <script>
+      // console.log(gon.spots);
+    </script>
     <div id="map"></div>
+    <% @spots.each do |spot| %>
+      <div id="<%= dom_id spot %>" style="display: none">
+        <%= form_for(spot) do |f| %>
+          <%= f.label :description %>
+          <%= f.text_field :description %>
+          <%= f.submit %>
+        <% end  %>
+      </div>
+    <% end %>
     <div id="description">
-      <input type="text" name="spotdescription">
-      <input type="submit" value="submit">
+      <!-- <input type="text" name="spotdescription">
+      <input type="submit" value="submit"> -->
     </div>
+    <div id="locationsaved">Location Saved</div>
     <button id="button-track-me">Track Me</button>
     <button id="button-stop-tracking">Stop Tracking Me</button>
     <button id="button-mark-spot">Mark Spot</button>

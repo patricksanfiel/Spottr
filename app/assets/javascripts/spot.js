@@ -70,26 +70,9 @@ window.onload = function() {
 
   trackMe=document.getElementById('button-mark-spot').addEventListener('click',
   function() {
-    var infoWindow;
+    var infoWindow, messageWindow;
     if (trackMe === true){
-      myLatLng = {lat: latitude, lng: longitude};
-      marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-      });
-      infowindow = new google.maps.InfoWindow({
-          content: document.getElementById('description')
-        });
-      google.maps.event.addListener(marker, 'click', function() {
-              infowindow.open(map, marker);
-            });
-      markers.push(marker);
-      setTimeout(function(){
-        // marker.setMap(null);
-        document.getElementById('button-mark-spot').disabled = false;
-      },6000)
-
+      let description = prompt("Describe the spot")
       $.ajax({
         type: "POST",
         url: "/spots",
@@ -98,18 +81,43 @@ window.onload = function() {
           spot: {
             latitude: latitude,
             longitude: longitude,
-            is_open: true
+            is_open: true,
+            description: description
+          }
         }
-      }
-    })
+      }).done(function(savedSpot){
+        console.log('spot saved successfully (probably)');
+        console.log(savedSpot);
 
-      .done(function(data){
-        if (data.is_successs) {
-          console.log("SPOT CREATED");
-        }
+        spotLatLng = {lat: savedSpot.latitude, lng: savedSpot.longitude};
+        marker = new google.maps.Marker({
+          position: spotLatLng,
+          map: map,
+          icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        });
+
+        infoWindow = new google.maps.InfoWindow({
+            content: savedSpot.description
+        });
+
+        // messageWindow = new google.maps.InfoWindow({
+        //     content: document.getElementById('locationsaved')
+        //   });
+        google.maps.event.addListener(marker, 'click', function() {
+          infoWindow.open(map, marker);
+          // messageWindow.open(map, marker);
+        });
+
+        // markers.push(marker);
+        setTimeout(function(){
+          // marker.setMap(null);
+          document.getElementById('button-mark-spot').disabled = false;
+        }, 6000)
+        document.getElementById('button-mark-spot').disabled = true;
       });
 
-      document.getElementById('button-mark-spot').disabled = true;
+
+
   }
 });
 }

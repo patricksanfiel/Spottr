@@ -63,7 +63,7 @@ function stopTracking(){
 }
 
 window.onload = function() {
-    document.getElementById('button-stop-tracking').disabled = true;
+    document.getElementById('button-dont-track').disabled = true;
     document.getElementById('button-mark-spot').disabled = true;
    document.getElementById('button-track-me').addEventListener('click', function() {
      trackMe = true;
@@ -72,12 +72,12 @@ window.onload = function() {
          console.log(position);
          // setMapOnAll(map);
        })
-       document.getElementById('button-stop-tracking').disabled = false;
+       document.getElementById('button-dont-track').disabled = false;
        document.getElementById('button-mark-spot').disabled = false;
 
    });
 
-  document.getElementById('button-stop-tracking').addEventListener('click',
+  document.getElementById('button-dont-track').addEventListener('click',
   function() {
     stopTracking();
     console.log(identifier)

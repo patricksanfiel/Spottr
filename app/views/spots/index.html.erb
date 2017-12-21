@@ -24,7 +24,7 @@
     <script>
       // console.log(gon.spots);
     </script>
-    
+
     <div id="map"></div>
     <% @spots.each do |spot| %>
       <div id="<%= dom_id spot %>" style="display: none">
@@ -41,7 +41,7 @@
     </div>
     <div id="locationsaved">Location Saved</div>
     <button id="button-track-me">Track Me</button>
-    <button id="button-stop-tracking">Stop Tracking Me</button>
+    <button id="button-dont-track">Stop Tracking Me</button>
     <button id="button-mark-spot">Mark Spot</button>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf_hNLTtGr7CruubLRsAL3ygms8LqKL-I&callback=initMap"
     async defer></script>

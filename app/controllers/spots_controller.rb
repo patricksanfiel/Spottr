@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
-
+  before_action :authorize
   def new
     Spot.new
   end

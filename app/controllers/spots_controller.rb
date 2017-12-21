@@ -21,12 +21,11 @@ class SpotsController < ApplicationController
     end
   end
 
-  def show
-
-  end
+  def show; end
 
   private
+
   def spot_params
-    params.require(:spot).permit(:description, :latitude, :longitude, :is_open )
+    params.require(:spot).permit(:description, :latitude, :longitude, :is_open)
   end
 end

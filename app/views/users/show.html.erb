@@ -1,6 +1,24 @@
-<h1>Spottr</h1>
-<%= form_with(model: current_user) do |u| %>
-<%= u.object.username %>
-<% end %>
-<%= link_to "Start Spotting", spots_path  %>
-<%= current_user.points %>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+</head>
+<body id="user_background">
+  <center>
+<div class="jumbotron col-md-3">
+    <h4>User Profile</h4>
+  <%= form_with(model: current_user) do |u| %>
+  <div class="user_name">
+        <h4><%= u.object.username %></h4>
+  </div>
+  <% end %>
+  <%= current_user.points %><br>
+  <h4>Badges</h4>
+
+  <% first_pin.each do | badge |%>
+  <ul><span><%= badge %></span></ul>
+  <% end %>
+  <%= link_to "Start Spotting", spots_path, class:'btn btn-primary btn-lg'  %>
+  <%= link_to 'Logout', '/logout', class:'btn btn-primary btn-lg'  %>
+</center>
+</div>
+</div>
+</body>

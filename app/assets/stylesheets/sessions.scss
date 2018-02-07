@@ -1,22 +1,38 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.card-body {
-  background-image: url(https://www.codeproject.com/KB/dialog/wpf_animated_text_splash/intial.jpg);
-  background-repeat: no-repeat;
-}
-.form :focus{
-
-}
-.card {
-  font-family: Questrial;
-  margin-top: 15%;
+.contentContainer{
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  padding-top: 2em;
 }
 
-.login_button {
-  padding-top: 1%;
+.loginForm{
+  padding: 1em;
 }
-.sign_up_page {
-  background-image: url(http://zyzixun.net/data/out/59/3290498-fade-wallpapers.jpeg);
-  background-repeat: no-repeat;
+.loginCard{
+  background-color: white;
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  // border-radius: 25px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.loginButton{
+  margin-bottom: -1em;
+}
+
+input{
+  // border-radius: 25px;
+  padding: 0.5em;
+  margin: 1em auto;
+  background-color: #EDEDED;
+}
+
+h4{
+  padding: 1em 0;
 }

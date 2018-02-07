@@ -1,34 +1,119 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.card-body {
-  background-image: url(https://www.codeproject.com/KB/dialog/wpf_animated_text_splash/intial.jpg);
-  background-repeat: no-repeat;
-}
-.form :focus{
 
-}
-.card {
-  font-family: Questrial;
-  margin-top: 10%;
+html, body{
+    margin: 0;
+
+    padding: 0;
+
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 100%;
+    height: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    // font-family: 'Righteous', cursive;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #EDEDED;
 }
 
-.Sign_up_button {
-  padding-top: 1%;
+span{
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  display: block;
+  text-align: center;
+  // text-shadow: 0px 3px 3px yellow;
 }
-.sign_up_page {
-  background-image: url(http://zyzixun.net/data/out/59/3290498-fade-wallpapers.jpeg);
-  background-repeat: no-repeat;
-}
-#user_background {
-  background-image: url(http://zyzixun.net/data/out/59/3290498-fade-wallpapers.jpeg);
-  background-repeat: no-repeat;
-}
-.jumbotron {
-  margin-top: 10%;
-  background-image: url(https://www.codeproject.com/KB/dialog/wpf_animated_text_splash/intial.jpg);
-  background-repeat: no-repeat;
-}
-.user_name :focus{
 
+.cardHeader{
+  font-size: 2.75em;
+  margin-bottom: 1em;
 }
+
+.profileHeaders{
+  font-size: 1.75em;
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+
+.username{
+  font-size: 1.75em;
+  // text-shadow: 0px 3px 3px yellow;
+}
+
+.userlogoIcon{
+  width: 15%;
+  margin-top: -5%;
+  margin-left: 42.3%;
+}
+
+.userCard{
+  // padding: 1.25em;
+  // background-color: #fbfbfb;
+  width: 80%;
+  height: 93%;
+  overflow: scroll;
+  margin: 0 auto;
+  // box-shadow: 0px 1px 1px 1px grey;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  background-image: url("http://www.rgbstock.com/cache1CVkux/users/b/ba/badk/300/qfOGtTS.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.contentContainer{
+  width: 100%;
+  height: 80%;
+  background-color: #EDEDED;
+}
+
+.navButton{
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  padding:1.5em;
+  border: solid #292421;
+  width: 50%;
+  background-color: #EEC900;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #000000;
+}
+
+.startButton{
+  margin-right: -0.15em;
+}
+
+.logoutButton{
+  margin-left: -0.15em;
+}
+
+.signupSubmit{
+  width: 100%;
+}
+
+.signupButton{
+  margin-bottom: -1em;
+  // margin-left: -1.2em;
+}
+
+.profileHeaders{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.badges{
+  margin-left: -1em;
+}
+// input{
+//   background-color: #EDEDED;
+//   // border-radius: 5px;
+// }

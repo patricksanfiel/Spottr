@@ -21,7 +21,7 @@ function initMap() {
           marker = new google.maps.Marker({
             position: myLatLng,
             map: map,
-            icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+            icon: 'https://d2poexpdc5y9vj.cloudfront.net/themes/3.0/img/icon-car.png'
           });
           infoWindow = new google.maps.InfoWindow({
             content: markerDescription
@@ -31,7 +31,8 @@ function initMap() {
         else {
           marker = new google.maps.Marker({
             position: myLatLng,
-            map: map
+            map: map,
+            icon: 'http://youtubelive.soraweb.net/image/close.png'
           });
         }
       }
@@ -68,15 +69,21 @@ window.onload = function (){
         window.navigator.geolocation.getCurrentPosition(function(position){
           console.log(position);
         })
+        document.getElementById('map').innerHTML = '<h3>Loading...</h3>'
         document.getElementById('button-dont-track').disabled = false;
         document.getElementById('button-mark-spot').disabled = false;
+        document.getElementById('button-track-me').disabled = true;
 
       });
 
       document.getElementById('button-dont-track').addEventListener('click',
       function() {
         stopTracking();
+        document.getElementById('button-track-me').disabled = false;
+        document.getElementById('button-dont-track').disabled = true;
+        document.getElementById('button-mark-spot').disabled = true;
         console.log(identifier)
+        document.getElementById('map').innerHTML = '<h3>Click Track Me to Start Spotting</h3>';
       });
       trackMe=document.getElementById('button-mark-spot').addEventListener('click',
       function() {
@@ -107,14 +114,16 @@ window.onload = function (){
               marker = new google.maps.Marker({
                 position: spotLatLng,
                 map: map,
-                icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+                icon: 'https://d2poexpdc5y9vj.cloudfront.net/themes/3.0/img/icon-car.png'
               });
 
               setTimeout(function(){
                 document.getElementById('button-mark-spot').disabled = false;
+                document.getElementById('button-dont-track').style.width = "50%"
               }, 6000);
 
               document.getElementById('button-mark-spot').disabled = true;
+              document.getElementById('button-dont-track').style.width = "100%";
             });
           });
         }

@@ -11,20 +11,29 @@
         height: 100%;
       }
       /* Optional: Makes the sample page fill the window. */
-      html, body {
+      /* html, body {
         height: 80%;
         width: 80%;
         margin: 0;
         padding: 0;
-      }
+      } */
     </style>
   </head>
   <body>
-    <div id="map"></div>
-    <button id="button-track-me">Track Me</button>
-    <button id="button-dont-track">Stop Tracking Me</button>
-    <button id="button-mark-spot">Mark Spot</button>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf_hNLTtGr7CruubLRsAL3ygms8LqKL-I&callback=initMap"
-    async defer></script>
+    <div class="spottrHeader">
+      <%= link_to "Back", {controller:"users", action:"show"},class:"navLink backNav"%>
+      <%= image_tag "Spottr_Bullseye_white.png", class:"logoIcon"%>
+      <%= link_to "Logout", {controller:"sessions", action:"destroy"}, class:"navLink logoutNav"%>
+    </div>
+    <div id="map" style="height:80%"><h3>Click Track Me to Start Spotting</h3></div>
+    <div class="controlPanel">
+      <button id="button-track-me" class="navButton" style="width:100%;">Track Me</button>
+      <div class="bottomTwo">
+        <button id="button-dont-track" class="navButton leftNav">Stop Tracking</button>
+        <button id="button-mark-spot" class="navButton rightNav">Mark Spot</button>
+      </div>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf_hNLTtGr7CruubLRsAL3ygms8LqKL-I&callback=initMap"
+      async defer></script>
+    </div>
   </body>
 </html>

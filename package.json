@@ -1,5 +1,39 @@
 {
-  "name": "Spottr",
+  "name": "spottr",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "^3.2.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "coffeescript": "1.12.7",
+    "webpack": "^3.10.0"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "application.html.erb",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patricksanfiel/Spottr.git"
+  },
+  "keywords": [
+    "spottr"
+  ],
+  "author": "Patrick Sanfiel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patricksanfiel/Spottr/issues"
+  },
+  "homepage": "https://github.com/patricksanfiel/Spottr#readme",
+  "devDependencies": {
+    "webpack-dev-server": "^2.11.1"
+  }
 }

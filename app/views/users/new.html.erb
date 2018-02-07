@@ -1,47 +1,46 @@
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <%= stylesheet_link_tag "users" %>
 </head>
-<center>
-  <body class='sign_up_page'>
+<body>
 
-<div class="card" style="width: 25rem;">
-<div class="card-body">
-  <h4 class="card-title">Sign Up!</h4>
-  <%= form_for :user, url: '/users' do |f| %>
-  <div class="form">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="form">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="form">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
-
-  <div class="form">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="form">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="Sign_up_button">
-  <%= f.submit "Sign Up", class:'btn btn-primary btn-lg'%>
+<div class="spottrHeader">
+  <%= image_tag "Spottr_Bullseye_white.png", class:"toolbarIcon"%>
 </div>
-<% end %>
+<div class="contentContainer">
+  <div class="userCard">
+    <h4 class="card-title">Sign Up!</h4>
+    <%= form_for :user, url: '/users' do |f| %>
+    <div class="form">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
 
-<%= link_to "Back", root_path %>
-<%= link_to "Login", sessions_new_path %>
+    <div class="form">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="form">
+      <%= f.label :username %><br />
+      <%= f.text_field :username %>
+    </div>
+
+    <div class="form">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="form">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="signupSubmit">
+      <%= f.submit "Sign Up", class:'bigButton signupButton'%>
+    </div>
+    <% end %>
+  </div>
 </div>
-</div>
+
+<%= link_to "Back", root_path, class: 'navButton leftNav' %>
+<%= link_to "Login", sessions_new_path, class:'navButton rightNav' %>
 </body>
 </center>

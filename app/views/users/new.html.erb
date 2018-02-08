@@ -3,12 +3,23 @@
 <body>
 
 <div class="spottrHeader">
-  <%= image_tag "Spottr_Bullseye_white.png", class:"toolbarIcon"%>
+  <%= link_to (image_tag "Spottr_Bullseye_white.png", class:"userlogoIcon spottrLogo"), root_path%>
 </div>
+
 <div class="contentContainer">
   <div class="userCard">
     <h4 class="card-title">Sign Up!</h4>
-    <%= form_for :user, url: '/users' do |f| %>
+    <%= form_with(model: @user, local: true) do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <div class="form">
       <%= f.label :name %><br />
       <%= f.text_field :name %>
@@ -34,13 +45,13 @@
       <%= f.password_field :password_confirmation %>
     </div>
     <div class="signupSubmit">
-      <%= f.submit "Sign Up", class:'bigButton signupButton'%>
+      <%= f.submit "Sign Up", class:'bigButton signupButton uiButtons'%>
     </div>
     <% end %>
   </div>
 </div>
 
-<%= link_to "Back", root_path, class: 'navButton leftNav' %>
-<%= link_to "Login", sessions_new_path, class:'navButton rightNav' %>
+<%= link_to "Back", root_path, class: 'navButton leftNav uiButtons' %>
+<%= link_to "Login", sessions_new_path, class:'navButton rightNav uiButtons' %>
 </body>
 </center>

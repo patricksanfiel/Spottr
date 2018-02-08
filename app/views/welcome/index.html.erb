@@ -7,16 +7,18 @@
   </head>
 
 <body>
-<div class="spottrHeader"><%= image_tag "Spottr_Bullseye_white.png", class:"toolbarIcon"%></div>
+<div class="spottrHeader">
+  <%= link_to (image_tag "Spottr_Bullseye_white.png",class:"userlogoIcon spottrLogo"), {controller:"users", action:"show"}%>
+</div>
 <div class="contentContainer">
   <div class="welcomeCard">
     <h4 class="welcome">Welcome To Spottr</h4>
-    <%= image_tag "Spottr_Bullseye_white.png", class: "spottrIcon"%>
+    <%= link_to (image_tag "Spottr_Bullseye_white.png", class: "spottrIcon"), {controller:"users", action:"show"}%>
   </div>
 </div>
 
-<%= link_to "Login", sessions_new_path, class:'navButton leftNav' %>
-<%= link_to "Sign Up", users_new_path, class:'navButton rightNav' %>
+<%= link_to "Login", sessions_new_path, class:'navButton leftNav uiButtons' %>
+<%= link_to "Sign Up", users_new_path, class:'navButton rightNav uiButtons' %>
 
 
 

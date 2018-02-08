@@ -1,5 +1,5 @@
 <div class="spottrHeader">
-  <%= image_tag "Spottr_Bullseye_white.png", class:"userlogoIcon"%>
+  <%= link_to (image_tag "Spottr_Bullseye_white.png", class:"userlogoIcon spottrLogo"), root_path%>
 </div>
 <div class="contentContainer">
   <div class="userCard">
@@ -21,6 +21,6 @@
   </div>
 </div>
 <div class="footer">
-  <%= link_to "Start Spotting", spots_path, class:'navButton startButton' %>
-  <%= link_to 'Logout', '/logout', class:'navButton logoutButton' %>
+  <%= link_to "Start Spotting", spots_path, class:'navButton startButton uiButtons' %>
+  <%= link_to 'Logout', '/logout', class:'navButton logoutButton uiButtons' %>
 </div>

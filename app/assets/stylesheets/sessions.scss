@@ -17,7 +17,6 @@
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  // border-radius: 25px;
   box-sizing: border-box;
   overflow: scroll;
 }
@@ -27,12 +26,33 @@
 }
 
 input{
-  // border-radius: 25px;
   padding: 0.5em;
   margin: 1em auto;
   background-color: #EDEDED;
 }
 
+#notice{
+  text-align: center;
+  background-color: white;
+  width: 60%;
+  margin: 1em auto;
+  border-radius: 5px;
+  font-weight: 900;
+  color: #DB2929;
+}
+
 h4{
   padding: 1em 0;
+}
+
+@media (min-width: 500px) {
+  .loginCard{
+    background-color: white;
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: scroll;
+  }
 }

@@ -2,9 +2,10 @@
 </head>
 <body>
 <div class="spottrHeader">
-  <%=image_tag "Spottr_Bullseye_white.png", class: "toolbarIcon"%>
+  <%= link_to (image_tag "Spottr_Bullseye_white.png", class:"userlogoIcon spottrLogo"), root_path%>
 </div>
 <div class="contentContainer">
+  <p id="notice"><%= notice %></p>
   <div class="loginCard card">
       <h4>Login</h4>
       <%= form_tag '/login' do %>
@@ -12,10 +13,10 @@
       <%= text_field_tag :username %><br />
       Password:<br />
       <%= password_field_tag :password %><br />
-      <%= submit_tag "Submit", class:'bigButton loginButton' %>
+      <%= submit_tag "Submit", class:'bigButton loginButton uiButtons' %>
   </div>
 </div>
-<%= link_to "Sign Up", users_new_path, class:"navButton leftNav" %>
-<%= link_to "Back", root_path, class:"navButton rightNav" %>
+<%= link_to "Sign Up", users_new_path, class:"navButton leftNav uiButtons" %>
+<%= link_to "Back", root_path, class:"navButton rightNav uiButtons" %>
 <% end %>
 </body>

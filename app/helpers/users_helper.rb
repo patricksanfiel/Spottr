@@ -2,27 +2,27 @@ module UsersHelper
   def first_pin
     badges = [
       {
-        name: 'Welcome to the wolfpack!',
+        name: '1 Point! Parking-Spot Pilgrim',
         value: 1
       },
       {
-        name: 'Patrick broke your car',
+        name: '10 Points! Amateur Spottr',
         value: 10
       },
       {
-        name: 'Ride it like you stole it!',
+        name: '20 Points! Concerned Citizen',
         value: 20
       },
       {
-        name: 'Dude wheres my car',
+        name: '30 Points! Spot Saver',
         value: 30
       },
       {
-        name: 'Spottr King',
+        name: '40 Points! Spotting Superhero',
         value: 40
       },
       {
-        name: 'Ride or Die',
+        name: '50 Points! Paragon of Parking',
         value: 50
       }
     ]
